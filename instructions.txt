@@ -1,0 +1,44 @@
+Today's exercise: Crud with Express from scratch!
+
+Repo: boolean-uk-api-prisma-with-express
+
+Description
+Build CRUD in the controllers and practice writing SQL queries to get all kinds of data from the database.
+
+Instructions
+- Create an express app from scratch.
+- Remember to include Prisma, Dotenv and Morgan as dependecies
+- Create a new Database in ElephatSQL, and grab the URL:
+    -- in ElephantSQL
+    -- in the details section.
+- Create a shadow Database in ElephatSQL, and grab the URL too!
+- Build the models for Books and Pets. Use the table structure and mock data from our previous exercise
+- Build the controllers for Books and Pets
+
+Build these routes and controllers for the books resource that work with the following fetch requests:
+    -- Full CRUD base routes
+    -- /books/fiction that returns fiction books
+    -- /books/fiction?topic=a-topic that returns a specific topic of fiction books
+    -- /books/non-fiction that return non-fiction books
+    -- /books/non-fiction?topic=a-topic that returns a specific topic of non-fiction books
+    -- /books/author/name-of-author?order=recent that returns a specific authors' books ordered by publicationDate with the most recent first (use ORDER in your SQL query)(edited)
+[15:10]
+@here
+Build these routes and controllers for the pets resource that work with the following fetch requests:
+    -- -- Full CRUD base routes
+    -- /pets/types that returns a list of pet types in the database
+    -- /pets/a-pet-type that returns pets of a specific type ie. dog
+    -- /pets/a-pet-type?breed=a-dog-breed that returns pets of a specific type and breed
+    -- /pets?microchip=false that returns all pets without a microchip
+    -- /pets/a-pet-type?microchip=false that returns pets of a specific type without a microchip
+
+
+
+Tips
+- Use ElephantSQL to test your SQL queries and see if they are returning what you want before adding them to the code.
+- Practice SQL... do as much of the sorting and filtering using SQL queries rather than Javascript.
+
+Challenge 1
+Add validations in your controllers that sends a useful message back to the client when there's an error, with suggestions as to what they could do differently.
+[15:16]
+@everyone Please make sure you use this as your repo name => boolean-uk-api-prisma-with-express
