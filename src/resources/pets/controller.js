@@ -35,6 +35,33 @@ function updateOne(req, res){
     .then(dbResponse => res.json(dbResponse))
 }
 
+function petTypes(req, res){
+  prisma.pets.findMany({
+    select: {type: true},
+    distinct: ['type'],
+    orderBy: {type: "asc"}})
+    .then(dbResponse => res.json(dbResponse))
+}
+
+function retrieveType(req, res){
+  let type = req.params.type
+  prisma.pets.findMany({
+    where: {type}, 
+    orderBy: {type: "asc"}})
+    .then(dbResponse => res.json(dbResponse))
+}
+
+/*
+function petType(req, res){
+  let criteria = {type: "Fiction"}
+  let {topic} = req.query;
+  if (topic) criteria.topic = topic
+  prisma.books.findMany({
+    where: criteria, 
+    orderBy: {publicationdate: "desc"}})
+    .then(dbResponse => res.json(dbResponse))
+}
+*/
 function buildData(req, res){
   pets = buildAnimalDatabase()
   pets.forEach((pet) => {
@@ -42,6 +69,7 @@ function buildData(req, res){
   })
 }
 
-module.exports = {createOne, retrieveAll, retrieveOne, deleteOne, updateOne, buildData}
+module.exports = {createOne, retrieveAll, retrieveOne, deleteOne, updateOne, petTypes, 
+  retrieveType, buildData}
 
 

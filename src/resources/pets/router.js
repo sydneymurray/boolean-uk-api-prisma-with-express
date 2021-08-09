@@ -7,6 +7,8 @@ console.log("Router")
 
 petsRouter.post("/", petsController.createOne)
 petsRouter.get("/", petsController.retrieveAll)
+petsRouter.get("/types", petsController.petTypes)
+petsRouter.get("/type/:type", petsController.retrieveType)
 petsRouter.get("/:id", petsController.retrieveOne)
 petsRouter.delete("/:id", petsController.deleteOne)
 petsRouter.patch("/:id", petsController.updateOne)
